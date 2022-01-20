@@ -291,31 +291,102 @@
         
 
 
-# 알고리즘 실습 2-7
-def card_conv(x: int, r: int):
-    """정수 x를 r 진수로 변환한 뒤 그 수를 나타내는 문자열을 반환"""
+### 알고리즘 실습 2-7
+##def card_conv(x: int, r: int):
+##    """정수 x를 r 진수로 변환한 뒤 그 수를 나타내는 문자열을 반환"""
+##
+##    d = ''  # 변환 뒤 문자열
+##    dchar = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+##
+##    while x > 0:
+##        d += dchar[x % r]  # 해당하는 문자를 꺼내 결합
+##        x //= r
+##
+##    return d[::-1]          # 역순으로 반환
+##
+##
+##if __name__ == '__main__':
+##    print('10진수를 n진수로 변환합니다.')
+##    
+##    while True:
+##        while True:
+##            chg_num = int(input('변환할 값으로 음이 아닌 정수를 입력하세요.: '))
+##            if chg_num > 0:
+##                break
+##
+##        while True:
+##            n = int(input('어떤 진수로 변환할까요?: '))
+##            if 2 <= n <= 36:
+##                break
+##
+##        result = card_conv(chg_num, n)
+##
+##        print(f'{n}진수로는 {result}입니다.')
+##
+##        choice = input('한 번 더 변환할까요?(Y ... 예 / N ... 아니요): ')
+##        if choice == 'N' or choice == 'n':
+##            break
 
-    d = ''  # 변환 뒤 문자열
-    dchar = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
-    while x > 0:
-        d += dchar[x % r]  # 해당하는 문자를 꺼내 결합
-        x //= r
-
-    return d[::-1]          # 역순으로 반환
-
-
-print(card_conv(59, 16))
 
 
 
+### 알고리즘 실습 2-8
+##
+### 1000 이하의 소수를 나열하기.
+##
+##counter = 0
+##
+##for n in range(2, 1001):
+##    for i in range(2, n):
+##        counter += 1
+##        if n % i == 0:
+##            break
+##
+##    else:
+##        print(n)
+##
+##print(counter)
 
 
+# 알고리즘 실습 2-9
 
+### 내가 작성한 코드 
+##prime = [2]
+##counter = 0
+##
+##for n in range(2, 1001):
+##    if n > max(prime):
+##        for a in prime:
+##            counter += 1
+##            if n % a == 0:
+##                break
+##        else:
+##            prime.append(n)
+##    else:
+##        pass
+##
+##for c in prime:
+##    print(c)
+##
+##print(counter)
+        
+# 책 참고하여 수정
+ 
+prime = [2]
+counter = 0
 
+for n in range(3, 1001, 2):     # 홀수만 지정해준다
+    for a in prime[1:]:     # 홀수만 지정했기 때문에 prime[0]=2로 나누는 불필요한 계산을 하지 않기 위해 리스트 범위 지정
+        counter += 1
+        if n % a == 0:
+            break
+    else:
+        prime.append(n)
 
+for c in prime:
+    print(c)
 
-
+print(counter)
 
 
 
