@@ -132,19 +132,97 @@
 
 # 파이썬 300제 300
 
-per = ["10.31", "", "8.00"]
-for i in per:
-    try:
-        print(float(i))
-    except:
-        print(0)
-    else:
-        print("clean data")
-    finally:
-        print("변환 완료")
+##per = ["10.31", "", "8.00"]
+##for i in per:
+##    try:
+##        print(float(i))
+##    except:
+##        print(0)
+##    else:
+##        print("clean data")
+##    finally:
+##        print("변환 완료")
         
 
+### 알고리즘 실습 1-1
+##
+### 세 정수를 입력받아 최댓값 구하기
+##
+##print('세 정수의 최댓값을 구합니다.')
+##a = int(input('정수 a의 값을 입력하세요.: '))
+##b = int(input('정수 b의 값을 입력하세요.: '))
+##c = int(input('정수 c의 값을 입력하세요.: '))
+##
+##maximum = a
+##if b > maximum:
+##    maximum = b
+##if c > maximum:
+##    maximum = c
+##
+##print(f'최댓값은 {maximum}입니다.')
 
+
+### 알고리즘 실습 1C-1
+##
+##name = input('이름을 입력하세요.: ')
+##print(f"안녕하세요? {name} 님.")
+##
+
+
+### 알고리즘 실습 1-2
+##
+###최대값 구하기 함수버전
+##
+##def max3(a, b, c):
+##    maximum = a
+##    if b > maximum:
+##        b = maximum
+##    if c > maximum:
+##        c = maximum
+##    return maximum
+##
+##print(max(9,2,6))
+
+### 알고리즘 실습 1C-2
+### 세 정수 중 중앙값 구하기
+
+##def med3(a, b, c):
+##    intlist = [a, b, c]
+##    intlist.sort()
+##    return intlist[1]
+##
+##print(med3(5, 7, 9))
+
+##def med3(a, b, c):
+##    if a >= b:
+##        if b >= c:
+##            return b
+##        elif c >= a:
+##            return a
+##        else: return c
+##    elif a > c:
+##        return a
+##    elif b > c:
+##        return c
+##    else :
+##        return b
+##
+##print(med3(5, 7, 1))
+
+
+# 알고리즘 실습 1-7
+
+n = int(input('n값을 입력하세요: '))
+
+total = 0
+i = 1
+
+while i <= n:
+    total += i
+    i += 1
+
+print(total)
+    
 
 
 
