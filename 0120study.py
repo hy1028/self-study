@@ -210,21 +210,29 @@
 ##print(med3(5, 7, 1))
 
 
-# 알고리즘 실습 1-7
-
-n = int(input('n값을 입력하세요: '))
-
-total = 0
-i = 1
-
-while i <= n:
-    total += i
-    i += 1
-
-print(total)
+### 알고리즘 실습 1-7
+##
+##n = int(input('n값을 입력하세요: '))
+##
+##total = 0
+##i = 1
+##
+##while i <= n:
+##    total += i
+##    i += 1
+##
+##print(total)
     
 
-
+### 알고리즘 실습 1-8
+##
+##n = int(input('n값을 입력하세요: '))
+##
+##total = 0
+##for i in range(1, n+1):
+##    total += i
+##
+##print(total)
 
 
 
