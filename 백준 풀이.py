@@ -79,21 +79,169 @@
 
 
 # 2884번
-H, M = map(int, input().split())
-
-if H > 0:
-    if M > 44:
-        print(H, M-45)
-    else :
-        print(H-1, M+60-45)
-
-else:
-    if M > 44:
-        print(23, M-45)
-    else :
-        print(23, M+60-45)
+##H, M = map(int, input().split())
+##
+##if M >= 45:
+##    print(H, M-45)
+##elif M < 45 and H > 0:
+##    print(H - 1, M + 15)
+##else:
+##    print(23, M + 15)
 
 
+
+# 2739번
+
+##N = int(input())
+##
+##for i in range(1, 10):
+##    print(f'{N} * {i} = {N * i}')
+    
+
+# 10950번
+##T = int(input())
+##
+##for i in range(T):
+##    A, B = map(int, input().split())
+##    print(A + B)
+
+#8393번
+##n = int(input())
+##
+##total = 0
+##for i in range(1, n+1):
+##    total += i
+##
+##print(total)
+
+
+
+#15552번
+##import sys
+##
+##T = int(input())
+##
+##for i in range(T):
+##    A, B = map(int, sys.stdin.readline().split())   #input() 대신 sys.stdin.readline()을 사용하면 시간단축됨
+##    print(A + B)                                    #반복문에 input 사용 시 시간초과 될 수 있음.
+
+
+#2741번
+##N = int(input())
+##
+##for i in range(1, N+1):
+##    print(i)
+
+
+# 2742번
+##N = int(input())
+##
+##for i in range(N):
+##    print(N - i)
+
+
+#11021번
+##t = int(input())
+##
+##for i in range(1, t+1):
+##    a, b = map(int, input().split())
+##    print(f'Case #{i}: {a + b}')
+
+
+#11022번
+##t = int(input())
+##
+##for i in range(1, t+1):
+##    a, b = map(int, input().split())
+##    print(f'Case #{i}: {a} + {b} = {a + b}')
+
+
+###2438번
+##n = int(input())
+##
+##for i in range(1, n+1):
+##    print('*' * i)
+
+
+#2439번
+##n = int(input())
+##
+##for i in range(1, n+1):
+##    print(' ' * (n-i), end=''); print('*' * i)
+
+    
+#10871
+##n, x = map(int, input().split())
+##a = input().split()
+##
+##for i in a:
+##    b = int(i)
+##    if b < x:
+##        print(b, end=' ')
+
+
+#10952번
+##while True:
+##    a, b = map(int, input().split())
+##    if a == 0 and b == 0:
+##        break
+##    else:
+##        print(a + b)
+
+#10951번
+##while True:
+##    try:
+##        a, b = map(int, input().split())
+##    except:
+##        break
+##    else:
+##        print(a + b)
+
+#1110번
+##n = int(input())
+##firstn = n
+##count = 0
+##while True:
+##    a = n//10 + n%10
+##    add = a%10
+##    n = ((n%10)*10) + add
+##    count += 1
+##    if n == firstn:
+##        break
+##print(count)
+
+
+#10818번
+##import sys
+##n = int(input())
+##nlist = map(int, sys.stdin.readline().split())
+##nlist = list(nlist)             # map class는 인덱싱이 불가하여 list형으로 캐스팅함.
+##
+##print(min(nlist),end = ' '); print(max(nlist))
+
+
+#2562번
+nlist = [int(input()) for i in range(9)]
+print(max(nlist))
+print(nlist.index(max(nlist)) + 1)
+
+
+
+
+
+
+
+##l=[int(input())for i in range(9)]
+##print(max(l),l.index(max(l))+1)
+#2577번
+
+#3052번
+
+#1546번
+
+#8958번
+
+#4344번
 
 
 
