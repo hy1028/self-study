@@ -376,7 +376,7 @@ prime = [2]
 counter = 0
 
 for n in range(3, 1001, 2):     # 홀수만 지정해준다
-    for a in prime[1:]:     # 홀수만 지정했기 때문에 prime[0]=2로 나누는 불필요한 계산을 하지 않기 위해 리스트 범위 지정
+    for a in prime[1:]:     # 홀수만 지정 -> prime[0]=2로 나누는 불필요한 계산을 하지 않기 위해 리스트 범위 1: 부터 지정
         counter += 1
         if n % a == 0:
             break
