@@ -221,27 +221,137 @@
 
 
 #2562번
-nlist = [int(input()) for i in range(9)]
-print(max(nlist))
-print(nlist.index(max(nlist)) + 1)
+
+##nlist = [int(input()) for i in range(9)]    # 리스트내포로 표현해보았음
+##print(max(nlist))
+##print(nlist.index(max(nlist)) + 1)
 
 
-
-
-
-
-
-##l=[int(input())for i in range(9)]
-##print(max(l),l.index(max(l))+1)
 #2577번
+##a = int(input())
+##b = int(input())
+##c = int(input())
+##
+##total = a * b * c
+##
+##for i in range(10):
+##    print(str(total).count(str(i)))
 
 #3052번
+##nlist = []
+##for i in range(10):
+##    nlist.append(int(input()) % 42)
+##
+##print(len(set(nlist)))
+
 
 #1546번
+##n = int(input())
+##sl = list(map(int, input().split(' ')))
+##
+##max_s = max(sl)
+##
+##for i in range(n):
+##    sl[i] = sl[i] / max_s * 100
+##
+##print(sum(sl)/n)
+       
 
 #8958번
+##n = int(input())
+##i = 0
+##
+##while i < n:
+##    c = input()
+##    score = 0
+##    sl = []
+##    for a in range(len(c)):
+##        if c[a] == 'O':
+##            score += 1
+##            sl.append(score)
+##        else:
+##            score = 0
+##    print(sum(sl))
+##    i += 1          #while문 종료를 위해 넣어줌    
+
 
 #4344번
+##c = int(input())
+##a = 0
+##
+##while a < c:
+##    testcase = list(map(int, input().split()))
+##    num = testcase[0]
+##    average = sum(testcase[1:])/num
+##
+##    count = 0
+##    for i in range(1, num+1):
+##        if testcase[i] > average:
+##            count += 1
+##
+##    result = round(count/num*100, 3)
+##
+##    print(f'{result:.3f}%')
+##    a += 1
+
+#15596번
+##def solve(a):
+##    ans = sum(a)
+##
+##    return ans        
+
+#4673번
+def d(n):
+    a = sum(map(int, list(str(n))))
+    return n + a
+
+nsn = []    # non-self number list 생성
+for i in range(1, 10001):
+    nsn.append(d(i))
+
+for j in range(1, 10001):
+    if j in nsn:
+        pass
+    else:
+        print(j)
+
+            
+
+        
+
+
+
+
+    
+##    f = 10001*a + 1001*b + 101*c + 11*d + 2*e
+    
+
+#1065번
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
