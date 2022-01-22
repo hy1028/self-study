@@ -301,38 +301,55 @@
 ##    return ans        
 
 #4673번
-def d(n):
-    a = sum(map(int, list(str(n))))
-    return n + a
-
-nsn = []    # non-self number list 생성
-for i in range(1, 10001):
-    nsn.append(d(i))
-
-for j in range(1, 10001):
-    if j in nsn:
-        pass
-    else:
-        print(j)
-
-            
-
-        
-
-
-
-
-    
-##    f = 10001*a + 1001*b + 101*c + 11*d + 2*e
+##def d(n):
+##    a = sum(map(int, str(n)))
+##    return n + a
+##
+##nsn = []    # non-self number list 생성
+##for i in range(1, 10001):
+##    nsn.append(d(i))
+##
+##for j in range(1, 10001):
+##    if j in nsn:
+##        pass
+##    else:
+##        print(j)
     
 
 #1065번
+##def sol(n):
+##    if n < 100:
+##        return n
+##    else :
+##        dl = list(map(int, str(n)))
+##        ml = []
+##        for i in range(len(dl)-1):
+##            ml.append(dl[i] - dl[i+1])
+##
+##        nml = list(set(ml))
+##        if len(nml) == 1:
+##            return n
+##
+##a = int(input())
+##nlist = []
+##
+##for i in range(1, a+1):
+##    if sol(i) != None:
+##        nlist.append(sol(i))
+##
+##print(len(nlist))
 
+n = int(input())
+if n < 100 :
+    hs = n
+else:
+    hs = 99
+    for i in range(100, n+1):
+        dl = list(map(int, str(i)))
+        if dl[0] - dl[1] == dl[1] - dl[2]:
+            hs += 1
 
-
-
-
-
+print(hs)
 
 
 
