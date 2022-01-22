@@ -372,29 +372,92 @@
         
 # 책 참고하여 수정
  
-prime = [2]
-counter = 0
+##prime = [2]
+##counter = 0
+##
+##for n in range(3, 1001, 2):     # 홀수만 지정해준다
+##    for a in prime[1:]:     # 홀수만 지정 -> prime[0]=2로 나누는 불필요한 계산을 하지 않기 위해 리스트 범위 1: 부터 지정
+##        counter += 1
+##        if n % a == 0:
+##            break
+##    else:
+##        prime.append(n)
+##
+##for c in prime:
+##    print(c)
+##
+##print(counter)
 
-for n in range(3, 1001, 2):     # 홀수만 지정해준다
-    for a in prime[1:]:     # 홀수만 지정 -> prime[0]=2로 나누는 불필요한 계산을 하지 않기 위해 리스트 범위 1: 부터 지정
-        counter += 1
-        if n % a == 0:
+
+#실습 3-1
+##def search(a, key):
+##    i = 0
+##    while True:
+##        if i == len(a):
+##            return -1
+##        if a[i] == key:
+##            return i
+##        i += 1
+##
+##if __name__ == '__main__':
+##    num = int(input('원소 수를 입력하세요.: '))
+##    
+##    x = []
+##    for i in range(num):
+##        x.append(int(input(f'x[{i}]: ')))
+##
+##    ser = int(input('검색할 값을 입력하세요.:'))
+##
+##    if search(x, ser) == -1:
+##        print('검색값을 갖는 원소가 존재하지 않습니다.')
+##    else:
+##        print(f'검색값은 x[{search(x, ser)}]에 있습니다.')
+    
+#실습 3-2
+##def serch(a, key):
+##    for i in range(len(a)):
+##        if a[i] == key:
+##            return i
+##    return -1
+
+
+#실습 3-4
+def bin_search(a, key):
+    pl = 0
+    pr = len(a) - 1
+
+    while True:
+        pc = (pl + pr) // 2
+        if a[pc] == key:
+            return pc
+        elif a[pc] < key:
+            pl = pc + 1
+        else:
+            pr = pc - 1
+
+        if pl > pr:
             break
-    else:
-        prime.append(n)
+    return -1
 
-for c in prime:
-    print(c)
+if __name__ == '__main__':
+    num = int(input('원소 수를 입력하세요.: '))
+    print('배열 데이터를 오름차순으로 입력하세요.')
 
-print(counter)
+    x = [None] * num
+    x[0] = int(input('x[0]: '))
+    
+    for i in range(1, num):
+        while True:
+            x[i] = int(input(f'x[{i}]: '))
+            if x[i] >= x[i - 1]:
+                break
 
+    ser = int(input('검색할 값을 입력하세요.: '))
 
-
-
-
-
-
-
+    if bin_search(x, ser) == -1:
+        print('검색값을 갖는 원소가 존재하지 않습니다.')
+    else : 
+        print(f'검색값은 x[{bin_search(x, ser)}]에 있습니다.')
 
 
 
