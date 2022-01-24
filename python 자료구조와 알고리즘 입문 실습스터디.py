@@ -422,48 +422,62 @@
 
 
 #실습 3-4
-def bin_search(a, key):
-    pl = 0
-    pr = len(a) - 1
-
-    while True:
-        pc = (pl + pr) // 2
-        if a[pc] == key:
-            return pc
-        elif a[pc] < key:
-            pl = pc + 1
-        else:
-            pr = pc - 1
-
-        if pl > pr:
-            break
-    return -1
-
-if __name__ == '__main__':
-    num = int(input('원소 수를 입력하세요.: '))
-    print('배열 데이터를 오름차순으로 입력하세요.')
-
-    x = [None] * num
-    x[0] = int(input('x[0]: '))
-    
-    for i in range(1, num):
-        while True:
-            x[i] = int(input(f'x[{i}]: '))
-            if x[i] >= x[i - 1]:
-                break
-
-    ser = int(input('검색할 값을 입력하세요.: '))
-
-    if bin_search(x, ser) == -1:
-        print('검색값을 갖는 원소가 존재하지 않습니다.')
-    else : 
-        print(f'검색값은 x[{bin_search(x, ser)}]에 있습니다.')
-
-
+##def bin_search(a, key):
+##    pl = 0
+##    pr = len(a) - 1
+##
+##    while True:
+##        pc = (pl + pr) // 2
+##        if a[pc] == key:
+##            return pc
+##        elif a[pc] < key:
+##            pl = pc + 1
+##        else:
+##            pr = pc - 1
+##
+##        if pl > pr:
+##            break
+##    return -1
+##
+##if __name__ == '__main__':
+##    num = int(input('원소 수를 입력하세요.: '))
+##    print('배열 데이터를 오름차순으로 입력하세요.')
+##
+##    x = [None] * num
+##    x[0] = int(input('x[0]: '))
+##    
+##    for i in range(1, num):
+##        while True:
+##            x[i] = int(input(f'x[{i}]: '))
+##            if x[i] >= x[i - 1]:
+##                break
+##
+##    ser = int(input('검색할 값을 입력하세요.: '))
+##
+##    if bin_search(x, ser) == -1:
+##        print('검색값을 갖는 원소가 존재하지 않습니다.')
+##    else : 
+##        print(f'검색값은 x[{bin_search(x, ser)}]에 있습니다.')
 
 
+#실습 8-1
+from __future__ import annotations
+
+class Node:
+    def __init__(self, data, next: Node = None):
+        self.data = data
+        self.next = next
 
 
+class LinkedList:
+    def __init__(self):
+        self.no = 0 #노드의 개수
+        self.head = None # 머리 노드
+        self.current = None # 주목 노드
+
+    def __len__(self):
+        """연결 리스트의 노드 개수를 반환, 이 함수를 구현함으로써 연결리스트에서 len함수로 노드의 개수를 파악 가능하다."""
+        return self.no
 
 
 
