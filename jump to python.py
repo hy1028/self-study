@@ -437,22 +437,101 @@
         
 
 
-# 알고리즘 실습 2-7
-def card_conv(x: int, r: int):
-    """정수 x를 r 진수로 변환한 뒤 그 수를 나타내는 문자열을 반환"""
+### 알고리즘 실습 2-7
+##def card_conv(x: int, r: int):
+##    """정수 x를 r 진수로 변환한 뒤 그 수를 나타내는 문자열을 반환"""
+##
+##    d = ''  # 변환 뒤 문자열
+##    dchar = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+##
+##    while x > 0:
+##        d += dchar[x % r]  # 해당하는 문자를 꺼내 결합
+##        x //= r
+##
+##    return d[::-1]          # 역순으로 반환
+##
+##
+##print(card_conv(59, 16))
 
-    d = ''  # 변환 뒤 문자열
-    dchar = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-    while x > 0:
-        d += dchar[x % r]  # 해당하는 문자를 꺼내 결합
-        x //= r
+#2월3일 복습
 
-    return d[::-1]          # 역순으로 반환
+##treeHit = 0
+##while treeHit < 10:
+##    treeHit = treeHit + 1
+##    print(f'나무를 {treeHit}번 찍었습니다.')
+##    if treeHit == 10:
+##        print('나무 넘어갑니다.')
 
 
-print(card_conv(59, 16))
+##prompt = """
+##    1. Add
+##    2. Del
+##    3. List
+##    4. Quit
+##
+##    Enter number : """
+##
+##number = 0
+##while number != 4:
+##    print(prompt)
+##    number = int(input())
 
+
+
+##for i in range(1, 101):
+##    print(i)
+
+
+##test = [70, 60, 55, 75, 95, 90, 80, 80, 85, 100]
+##
+##tsum = sum(test)
+##print(tsum/len(test))
+
+
+##numbers = [1, 2, 3, 4, 5]
+##result = [n*2 for n in numbers if n % 2 == 1]
+##
+##print(result)
+
+
+##def is_odd(num):
+##    if num % 2 == 0:
+##        return True
+##    else:
+##        return False
+##
+##print(is_odd(3))
+
+
+
+##def avg_numbers(*args):
+##    result = 0
+##    for i in args:
+##        result += i
+##    return result / len(args)
+##
+##print(avg_numbers(1,2,3,4,5))
+
+
+
+##class Calculator:
+##    def __init__(self):
+##        self.value = 0
+##
+##    def add(self, val):
+##        self.value += val
+##
+##class UpgradeCalculator(Calculator):
+##    def minus(self, val):
+##        self.value -= val
+##
+##cal = UpgradeCalculator()
+##
+##cal.add(10)
+##cal.minus(7)
+##
+##print(cal.value)
 
 
 
