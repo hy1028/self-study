@@ -339,24 +339,29 @@
 ##
 ##print(len(nlist))
 
-n = int(input())
-if n < 100 :
-    hs = n
-else:
-    hs = 99
-    for i in range(100, n+1):
-        dl = list(map(int, str(i)))
-        if dl[0] - dl[1] == dl[1] - dl[2]:
-            hs += 1
-
-print(hs)
-
-
+##n = int(input())
+##if n < 100 :
+##    hs = n
+##else:
+##    hs = 99
+##    for i in range(100, n+1):
+##        dl = list(map(int, str(i)))
+##        if dl[0] - dl[1] == dl[1] - dl[2]:
+##            hs += 1
+##
+##print(hs)
 
 
+#10926번
+
+##a = input()
+##print(f'{a}??!')
 
 
 
+#18108번
+a = int(input())
+print(a - 543)
 
 
 
