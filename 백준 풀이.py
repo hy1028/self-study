@@ -360,26 +360,128 @@
 
 
 #18108번
-a = int(input())
-print(a - 543)
+##a = int(input())
+##print(a - 543)
 
 
 
+#11654번
+#ord 함수 사용 시 바로 풀이 가능함
+
+##list1 = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+##list2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+##list3 = []
+##
+##for i in list2:
+##    list3.append(i.upper())
+##
+##a = input()
+##
+##if a in list1:
+##    for i in list1:
+##        if i != a:
+##            pass
+##        else:
+##            print(48 + list1.index(i))
+##
+##if a in list2:
+##    for j in list2:
+##        if j != a:
+##            pass
+##        else:
+##            print(97 + list2.index(j))
+##
+##if a in list3:
+##    for k in list3:
+##        if k != a:
+##            pass
+##        else:
+##            print(65 + list3.index(k))
+
+##print(ord(input()))
 
 
+#11720번
+##num1 = input()
+##num2 = input()
+##
+##numlist = map(int, list(num2))
+##print(sum(numlist))
+
+# 다른 풀이
+##num1 = input()
+##num2 = input()
+##
+##total = 0
+##for i in num2:
+##    total += int(i)
+##
+##print(total)
 
 
+# 10809번
+##import string   # 알파벳 리스트 불러올 수 있는 모듈 
+##
+##a = input()
+##b = list(string.ascii_lowercase)
+##
+##for i in b:
+##    if i in a:
+##        print(a.index(i))
+##    else:
+##        print(-1)
 
 
+#2675번
+##num = int(input())
+##for i in range(num):
+##    a, b = input().split()
+##    for j in b:
+##        print(j * int(a), end='')
+##    print()
 
 
+#1157번
+##a = input()
+##b = list(a.upper())
+##bset = set(b)
+##setlist = list(bset)
+##
+##count = []
+##for i in setlist:
+##    count.append(b.count(i))
+##
+##dic = dict(zip(count, setlist))
+##
+##count.sort()
+##count.reverse()
+##
+##if len(setlist) == 1:
+##    print(setlist[0])
+##elif len(count) == 1:
+##    print('?')
+##elif count[0] == count[1]:
+##    print('?')
+##else:
+##    print(dic[max(count)])
 
-
-
-
-
-
-
+# 다른풀이
+##import string
+##
+##word = input().upper()
+##abc = list(string.ascii_uppercase)
+##
+##r = 0
+##count = 0
+##for a in abc:
+##    temp = word.count(a)
+##    if temp != 0:
+##        if r < temp:
+##            r = temp
+##            count = a
+##        elif r == temp:
+##            count = '?'      
+##print(count)
 
 
 
