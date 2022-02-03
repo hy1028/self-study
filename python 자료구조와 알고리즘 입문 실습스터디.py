@@ -460,31 +460,204 @@
 ##        print(f'검색값은 x[{bin_search(x, ser)}]에 있습니다.')
 
 
-#실습 8-1
+#실습 8. 연결리스트
+##from __future__ import annotations
+##
+##class Node:
+##    def __init__(self, data, next: Node = None):
+##        self.data = data
+##        self.next = next
+##
+##
+##class LinkedList:
+##    def __init__(self):
+##        self.no = 0 #노드의 개수
+##        self.head = None # 머리 노드
+##        self.current = None # 주목 노드
+##
+##    def __len__(self):
+##        """연결 리스트의 노드 개수를 반환, 이 함수를 구현함으로써 연결리스트에서 len함수로 노드의 개수를 파악 가능하다."""
+##        return self.no
+##
+##    def search(self, data):
+##        """data와 값이 같은 노드를 검색한다."""
+##        cnt = 0
+##        ptr = self.head         # 스캔중인 노드 참조하는 변수
+##        while ptr is not None:
+##            if ptr.data == data:
+##                self.current = ptr
+##                return cnt
+##            cnt += 1
+##            ptr = ptr.next
+##        return -1
+##
+##    def __contains__(self, data):
+##        """연결리스트에 data가 포함되어있는지 확인"""
+##        return self.search(data) >= 0
+##
+##
+##    def add_first(self, data):
+##        ptr = self.head
+##        self.head = self.current = Node(data, prt)
+##        self.no += 1
+##
+##    def add_last(self, data):
+##        if self.head is None:
+##            self.add_first(data)
+##        else:
+##            ptr = self.head
+##            while ptr.next is not None:
+##                ptr = ptr.next
+##            ptr.next = self.current = Node(data, None)
+##            self.no += 1
+##
+##    def remove_first(self):
+##        if self.head is not None:
+##            self.head = self.current = self.head.next
+##            self.no -= 1
+##
+##    def remove_last(self):
+##        if self.head is not None:
+##            if self.head.next is None:
+##                self.remove_first()
+##            else:
+##                ptr = self.head
+##                pre = self.head
+##
+##                while ptr.next is not None:
+##                    pre = ptr
+##                    ptr = ptr.next
+##                pre.next = None
+##                self.current = pre
+##                self.no -= 1
+##
+##    def remove(self, p:Node) :
+##        if self.head is not None:
+##            if p is self.head:
+##                self.remove_first()
+##            else:
+##                ptr = self.head
+##
+##                while ptr.next is not p:
+##                    ptr = ptr.next
+##                    if ptr is None:
+##                        return
+##                ptr.next = p.next
+##                self.current = ptr
+##                self.no -= 1
+##
+##    def remove_current_node(self):
+##        self.remove(self.current)
+##
+##    def clear():
+##        while self.head is not None:
+##            self.remove_first()
+##        self.current = None
+##        self.no = 0
+##
+##    def next(self):
+##        if self.current is None or self.current.next is None:
+##            return False
+##        self.current = self.current.next
+##        return True
+##
+##    def print_current_node(self):
+##        if self.current in None:
+##            print('주목 노드가 존재하지 않습니다.')
+##        else:
+##            print(self.current.data)
+##
+##    def print(self):
+##        ptr = self.head
+##
+##        while ptr is not None:
+##            print(ptr.data)
+##            ptr = ptr.next
+
+##from __future__ import annotations
+##
+##class Node:
+##    def __init__(self, data, next:Node):
+##        self.data = data
+##        self.next = next
+##
+##class LinkedList:
+##    def __init__(self):
+##        self.no = 0
+##        self.head = None
+##        self.current = None
+##
+##    def __len__(self):
+##        return self.no
+##
+##    def search(self, data):
+##        cnt = 0
+##        ptr = self.head
+##
+##        while ptr is not None:
+##            if ptr.data == data:
+##                self.current = ptr
+##                return cnt
+##            cnt += 1
+##            ptr = ptr.next
+##        return -1
+##
+##    def add_first(self, data):
+##        ptr = self.head
+##        self.head = self.current = Node(data, ptr)
+##        self.no += 1
+    
+        
+
+
+# 실습 3-5
 from __future__ import annotations
+from typing import Any, Type
+import hashlib
 
 class Node:
-    def __init__(self, data, next: Node = None):
-        self.data = data
+    def __init__(self, key: Any, value:Any, next:Node):
+        self.key = key
+        self.value = value
         self.next = next
 
 
-class LinkedList:
-    def __init__(self):
-        self.no = 0 #노드의 개수
-        self.head = None # 머리 노드
-        self.current = None # 주목 노드
+class ChaineHash:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.table = [None] * self.capacity
 
-    def __len__(self):
-        """연결 리스트의 노드 개수를 반환, 이 함수를 구현함으로써 연결리스트에서 len함수로 노드의 개수를 파악 가능하다."""
-        return self.no
-
-
+    def hash_value(self, key):
+        if isinstance(key, int):
+            return key % self.capacity
+        return(int(hashlib.sha256(str(key).encode()).hexdigest(),16) % self.capacity)
 
 
+    def search(self, key):
+        hash = self.hash_value(key)
+        p = self.table[hash]    # 해당 해시의 노드를 주목
+
+        while p is not None:
+            if p.key == key:
+                return p.value
+            p = p.next
+        return None
+
+    def add(self, key, value):
+        hash = self.hash_value(key)
+        p = self.table[hash] # 노드 주목  
+
+        while p is not None:
+            if p.key == key:
+                return False
+            p = p.next
+
+        temp = Node(key, value, self.table[hash])
+        self.table[hash] = temp
+        return True
 
 
-
+    
 
 
 
