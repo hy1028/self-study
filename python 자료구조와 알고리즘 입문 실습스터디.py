@@ -606,58 +606,111 @@
 ##        ptr = self.head
 ##        self.head = self.current = Node(data, ptr)
 ##        self.no += 1
+##    
+##        
+##
+##
+### 실습 3-5
+##from __future__ import annotations
+##from typing import Any, Type
+##import hashlib
+##
+##class Node:
+##    def __init__(self, key: Any, value:Any, next:Node):
+##        self.key = key
+##        self.value = value
+##        self.next = next
+##
+##
+##class ChaineHash:
+##    def __init__(self, capacity):
+##        self.capacity = capacity
+##        self.table = [None] * self.capacity
+##
+##    def hash_value(self, key):
+##        if isinstance(key, int):
+##            return key % self.capacity
+##        return(int(hashlib.sha256(str(key).encode()).hexdigest(),16) % self.capacity)
+##
+##
+##    def search(self, key):
+##        hash = self.hash_value(key)
+##        p = self.table[hash]    # 해당 해시의 노드를 주목
+##
+##        while p is not None:
+##            if p.key == key:
+##                return p.value
+##            p = p.next
+##        return None
+##
+##    def add(self, key, value):
+##        hash = self.hash_value(key)
+##        p = self.table[hash] # 노드 주목  
+##
+##        while p is not None:        # while의 목적은 추가하려는 키값이 이미 등록되어있는지 스캔해본다.
+##            if p.key == key:
+##                return False
+##            p = p.next
+##
+##        temp = Node(key, value, self.table[hash])
+##        self.table[hash] = temp
+##        return True
+##
+##    def remove(self, key):
+##        hash = self.hash_value(key)
+##        p = self.table[hash]
+##        pp = None
+##
+##        while p is not None:
+##            if p.key == key:
+##                if pp is None:
+##                    self.table[hash] = p.next
+##                else:
+##                    pp.next = p.next
+##                return True
+##            pp = p
+##            p = p.next
+##        return False
+
     
-        
+# 2월 3일 복습
+##print('세 정수의 최댓값을 구합니다.')
+##a = int(input('정수 a의 값을 입력하세요.: '))
+##b = int(input('정수 b의 값을 입력하세요.: '))
+##c = int(input('정수 c의 값을 입력하세요.: '))
+##    
+##maximum = a
+##if b > maximum:
+##    maximum = b
+##if c > maximum:
+##    maximum = c
+##
+##print(f'최댓값은 {maximum}입니다.')
 
 
-# 실습 3-5
-from __future__ import annotations
-from typing import Any, Type
-import hashlib
+def med3(a, b, c):
+    numlist = [a, b, c]
+    numlist.sort()
+    return numlist[1]
 
-class Node:
-    def __init__(self, key: Any, value:Any, next:Node):
-        self.key = key
-        self.value = value
-        self.next = next
+print('세 수의 중앙값을 구합니다.')
+a = int(input('정수 a의 값을 입력하세요.: '))
+b = int(input('정수 b의 값을 입력하세요.: '))
+c = int(input('정수 c의 값을 입력하세요.: '))
 
-
-class ChaineHash:
-    def __init__(self, capacity):
-        self.capacity = capacity
-        self.table = [None] * self.capacity
-
-    def hash_value(self, key):
-        if isinstance(key, int):
-            return key % self.capacity
-        return(int(hashlib.sha256(str(key).encode()).hexdigest(),16) % self.capacity)
+print(f'중앙값은 {med3(a, b, c)}입니다.')
 
 
-    def search(self, key):
-        hash = self.hash_value(key)
-        p = self.table[hash]    # 해당 해시의 노드를 주목
-
-        while p is not None:
-            if p.key == key:
-                return p.value
-            p = p.next
-        return None
-
-    def add(self, key, value):
-        hash = self.hash_value(key)
-        p = self.table[hash] # 노드 주목  
-
-        while p is not None:
-            if p.key == key:
-                return False
-            p = p.next
-
-        temp = Node(key, value, self.table[hash])
-        self.table[hash] = temp
-        return True
 
 
-    
+
+
+
+
+
+
+
+
 
 
 
