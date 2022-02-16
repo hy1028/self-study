@@ -86,19 +86,76 @@
 #     else:
 #         break
 
-#6072
+# #6072
+# a = int(input())
+# while a > 0:
+#     print(a)
+#     a -= 1
+
+# #6073
+# n = int(input())
+# a = n - 1
+# while a > -1:
+#     print(a)
+#     a -= 1
+
+# #6074
+# a = input()
+# b = ord(a)
+# s = ord('a')
+# while s <= b:
+#     print(chr(s), end=' ')
+#     s += 1
+
+# #6075
+# a = int(input())
+# n = 0
+# while n <= a:
+#     print(n)
+#     n += 1
+
+# #6076
+# a = int(input())
+# for i in range(a+1):
+#     print(i)
+
+# #6077
+# a = int(input())
+# s = 0
+# for i in range(a+1):
+#     if i % 2 == 0:
+#         s += i
+#     else:
+#         pass
+#
+# print(s)
 
 
+# #6078
+# n = input()
+# print(n)
+# while n != 'q':
+#     n = input()
+#     print(n)
+#     if n == 'q':
+#         break
 
+# #6079
+# a = int(input())
+# s = 0
+# for i in range(1, a):
+#     s += i
+#     if s >= a:
+#         print(i)
+#         break
 
+# #6080
+# a, b = map(int, input().split(' '))
+# for i in range(1, a+1):
+#     for j in range(1, b+1):
+#         print(i, j)
 
-
-
-
-
-
-
-
+#6081
 
 
 
