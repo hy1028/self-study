@@ -155,19 +155,105 @@
 #     for j in range(1, b+1):
 #         print(i, j)
 
-#6081
+# #6081
+# n = input()
+# n = int(n, 16)
+# for i in range(1, 16):
+#     print('%X'%n, '*', '%X'%i, '=', '%X'%(n*i), sep='')
 
+# #6082
+# n = int(input())
+# for i in range(1, n+1):
+#     if i % 10 == 3 or i % 10 == 6 or i % 10 == 9:
+#         print('X', end=' ')
+#     else:
+#         print(i, end=' ')
 
+# #6083
+# r, g, b = map(int, input().split(' '))
+# for i in range(r):
+#     for j in range(g):
+#         for k in range(b):
+#             print(i, j, k)
+# print(r*g*b)
 
+# #6084
+# h, b, c, s = map(int, input().split(' '))
+# print(format(h * b * c * s / 8 / 1024/ 1024, '.1f'), 'MB')
 
+# #6085
+# w, h, b = map(int, input().split(' '))
+# print(format(w * h * b / 8/ 1024/ 1024, '.2f'), 'MB')
 
+# #6086
+# n = int(input())
+# sum = 0
+# for i in range(n+1):
+#     sum += i
+#     if sum >= n:
+#         print(sum)
+#         break
 
+# #6087
+# n = int(input())
+# for i in range(1, n+1):
+#     if i % 3 == 0:
+#         continue
+#     else:
+#         print(i, end=' ')
 
+# #6088
+# a, b, c = map(int, input().split())
+# sum = a
+# n = 1
+# while n < c:
+#     sum += b
+#     n += 1
+#
+# print(sum)
 
+# #6089
+# a, b, c = map(int, input().split())
+# for i in range(c-1):
+#     a *= b
+#
+# print(a)
 
+# #6090
+# a, b, c, d = map(int, input().split())
+# for i in range(1, d):
+#     a *= b
+#     a += c
+#
+# print(a)
 
+# #6091
+# a, b, c = map(int, input().split())
+# day = 1
+# while day%a !=0 or day%b !=0 or day%c !=0:
+#     day += 1
+#
+# print(day)
 
+# #6092
+# n = int(input())
+# a = list(map(int, input().split()))
+# for i in range(1, 24):
+#     count = 0
+#     for j in a:
+#         if i == j:
+#             count += 1
+#     print(count, end = ' ')
 
+# #6093
+# n = int(input())
+# a = list(map(int, input().split()))
+# a.reverse()
+# for i in a:
+#     print(i, end=' ')
 
-
+#6094
+n = int(input())
+a = list(map(int, input().split()))
+print(min(a))
 
